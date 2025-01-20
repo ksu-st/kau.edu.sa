@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar-SA" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج تحصيل الحوالة البنكية</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: right; /* محاذاة النصوص لليمين */
+            padding: 20px;
+        }
+
+        /* Form container */
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #54ef5e;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #14db2b;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>نموذج تحصيل الحوالة البنكية</h2>
+        <form action="process_payment.php" method="POST">
+            <div class="form-group">
+                <label for="student_name">اسم الطالب:</label>
+                <input type="text" id="student_name" name="student_name" required>
+            </div>
+            <div class="form-group">
+                <label for="student_id">الرقم الجامعي:</label>
+                <input type="text" id="student_id" name="student_id" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">المبلغ المحول (بالريال السعودي):</label>
+                <input type="number" id="amount" name="amount" required>
+            </div>
+            <div class="form-group">
+                <label for="iban">رقم الآيبان:</label>
+                <input type="text" id="iban" name="iban" required>
+            </div>
+            <div class="form-group">
+                <label for="bank_name">اسم البنك المحول منه:</label>
+                <input type="text" id="bank_name" name="bank_name" required>
+            </div>
+            <div class="form-group">
+                <label for="transfer_date">تاريخ التحويل:</label>
+                <input type="date" id="transfer_date" name="transfer_date" required>
+            </div>
+            <div class="form-group">
+                <label for="receipt">إرفاق إيصال التحويل:</label>
+                <input type="file" id="receipt" name="receipt" accept="image/*,application/pdf">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="إرسال">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
